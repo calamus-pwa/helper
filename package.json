@@ -1,0 +1,22 @@
+{
+  "author": "CalamusBikes",
+  "name": "@calamus-pwa/helper",
+  "version": "1.0.2",
+  "description": "Helper classes",
+  "repository": "git://github.com/calamus-pwa/helper.git",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.6.3"
+  },
+  "files": [
+    "lib/**/*"
+  ]
+}
