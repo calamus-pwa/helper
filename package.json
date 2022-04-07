@@ -1,15 +1,17 @@
 {
   "author": "CalamusBikes",
   "name": "@calamus-pwa/helper",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Helper classes",
   "repository": "git://github.com/calamus-pwa/helper.git",
   "type": "module",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "exports": {
-    "./frames": "./lib/frames",
-    "./utils": "./lib/utils"
+    "./frames": {
+      "types": "./lib/frames/index.d.ts",
+      "default": "./lib/frames/index.js"
+    }
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
