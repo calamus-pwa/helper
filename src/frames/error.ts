@@ -1,5 +1,6 @@
 import { randomEnum } from "../utils/math";
 import { FrameHeader } from "./frame";
+import ErrorMessageEn from "./errorMessage.json";
 
 enum ErrorCodes {
   CURRENT_ERROR_250 = "CURRENT_ERROR_250",
@@ -60,4 +61,13 @@ export const getRandomError = (): ErrorFrame => {
     errorCode: randomEnum(ErrorCodes),
     frameHeader: FrameHeader.ERROR,
   } as ErrorFrame;
+};
+
+interface ErrorMessageMap {
+  [key: string]: string;
+}
+
+export const getErrorMessage = (errorCode: string, language = "en"): string => {
+  const errorMessage = ErrorMessageEn as ErrorMessageMap;
+  return errorMessage[errorCode];
 };

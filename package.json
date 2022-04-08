@@ -1,30 +1,25 @@
 {
   "author": "CalamusBikes",
   "name": "@calamus-pwa/helper",
-  "version": "1.0.10",
+  "version": "1.1.0",
   "description": "Helper classes",
   "repository": "git://github.com/calamus-pwa/helper.git",
   "type": "module",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
-  "exports": {
-    "./frames": "./lib/frames/"
-  },
+  "main": "./index.js",
+  "types": "./index.d.ts",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
   "scripts": {
-    "clean-lib": "rimraf ./lib",
-    "copypackage": "cp -rf package.json lib",
-    "build": "npm run clean-lib && tsc && npm run copypackage"
+    "clean-lib": "rimraf ./dist",
+    "copypackage": "cp -rf package.json dist",
+    "build": "npm run clean-lib && tsc && npm run copypackage",
+    "build-test": "npm run clean-lib && tsc && npm run copypackage"
   },
   "license": "MIT",
   "devDependencies": {
     "typescript": "^4.6.3"
   },
-  "files": [
-    "lib/**/*"
-  ],
   "dependencies": {
     "rimraf": "^3.0.2"
   }
