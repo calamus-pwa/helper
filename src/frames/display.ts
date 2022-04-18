@@ -1,19 +1,14 @@
-import { FrameHeader } from "./frame";
-import { randomNumber, randomBoolean } from "../utils/math";
-
-export enum DisplayFrameHeader {
-  DISPLAY_WRITE = FrameHeader.DISPLAY_WRITE,
-  DISPLAY_READ = FrameHeader.DISPLAY_READ,
-  DISPLAY_ACK = FrameHeader.DISPLAY_ACK,
-  DISPLAY_NAK = FrameHeader.DISPLAY_NAK,
-}
+import { FrameHeader, FrameType } from "./baseFrame";
+import { randomNumber, randomBoolean, randomEnum } from "../utils/math";
 
 export type DisplayFrame = {
   id: number;
   createdAt: number; //Date in epoch
+  frameHeader: FrameHeader.DISPLAY;
+  frameType: FrameType;
+
   displaySleepTimer: number;
   isDataSharingEnabled: boolean;
-  savedLocations: string[];
   isGPSEnabled: boolean;
   isFindMyBikeEnabled: boolean;
   findMyBikeSoundId: number;
@@ -30,8 +25,6 @@ export type DisplayFrame = {
   //might be moved to settings
   isBlindSpotDetectionEnabled: boolean;
   BlindSpotDetectionSensitivity: number;
-
-  frameHeader: DisplayFrameHeader;
 };
 
 export const getDefaultDisplay = (): DisplayFrame => {
@@ -59,7 +52,8 @@ export const getDefaultDisplay = (): DisplayFrame => {
     isBlindSpotDetectionEnabled: true,
     BlindSpotDetectionSensitivity: 5,
 
-    frameHeader: DisplayFrameHeader.DISPLAY_ACK,
+    frameHeader: FrameHeader.DISPLAY,
+    frameType: FrameType.ACK,
   } as DisplayFrame;
 };
 
@@ -88,6 +82,7 @@ export const getRandomDisplay = (): DisplayFrame => {
     isBlindSpotDetectionEnabled: randomBoolean(),
     BlindSpotDetectionSensitivity: randomNumber(1, 10),
 
-    frameHeader: DisplayFrameHeader.DISPLAY_ACK,
+    frameHeader: FrameHeader.DISPLAY,
+    frameType: randomEnum(FrameType),
   } as DisplayFrame;
 };
