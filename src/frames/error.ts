@@ -1,5 +1,5 @@
 import { randomEnum } from "../utils/math";
-import { FrameHeader } from "./frame";
+import { FrameHeader } from "./baseFrame";
 import ErrorMessageEn from "./errorMessage.json";
 
 enum ErrorCodes {
