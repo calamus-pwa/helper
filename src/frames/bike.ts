@@ -1,7 +1,7 @@
 import { SettingsFrame } from "./settings";
 import { StatusFrame } from "./status";
 import { DisplayFrame } from "./display";
-import { DebugFrame } from "./debug";
+import { DebugFrame1, DebugFrame2, DebugFrame3 } from "./debug";
 
 type Bike = {
   bikeId: string;
@@ -13,7 +13,7 @@ type Bike = {
   settings: SettingsFrame;
   status: StatusFrame;
   display: DisplayFrame;
-  debug: DebugFrame;
+  debug: DebugFrame1 | DebugFrame2 | DebugFrame3;
 };
 
 export default Bike;
