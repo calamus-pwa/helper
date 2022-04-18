@@ -3,7 +3,7 @@ export * from "./bike";
 export * from "./debug";
 export * from "./display";
 export * from "./error";
-export * from "./frame";
+export * from "./baseFrame";
 export * from "./heartbeat";
 export * from "./settings";
 export * from "./status";
