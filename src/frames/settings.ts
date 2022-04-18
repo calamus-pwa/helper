@@ -1,4 +1,4 @@
-import { FrameHeader } from "./frame";
+import { FrameHeader, FrameType } from "./baseFrame";
 
 export enum BikePedalAssistMode {
   PAS_MODE_LEVEL_3 = "PAS_MODE_LEVEL_3",
@@ -27,16 +27,11 @@ export enum BikeWheelDiameter {
   DIA_28_INCH = "DIA_28_INCH",
 }
 
-export enum SettingsFrameHeader {
-  SETTINGS_READ = FrameHeader.SETTINGS_READ,
-  SETTINGS_WRITE = FrameHeader.SETTINGS_WRITE,
-  SETTINGS_ACK = FrameHeader.SETTINGS_ACK,
-  SETTINGS_NAK = FrameHeader.SETTINGS_NAK,
-}
-
 export type SettingsFrame = {
   id: number;
   createdAt: number;
+  frameType: FrameType;
+  frameHeader: FrameHeader.SETTINGS;
   autoShutdownTimer: number;
   pedalAssistMode: BikePedalAssistMode;
   assistSupportLevel: BikeAssistSupportLevel;
@@ -51,13 +46,14 @@ export type SettingsFrame = {
   isVibrationMotorLeftEnabled: boolean;
   isVibrationMotorRightEnabled: boolean;
   magnetsInSpeedSensor: number;
-  frameHeader: SettingsFrameHeader;
 };
 
 export const getDefaultSettings = (): SettingsFrame => {
   return {
     id: Date.now(),
     createdAt: Date.now(),
+    frameHeader: FrameHeader.SETTINGS,
+    frameType: FrameType.ACK,
     autoShutdownTimer: 0,
     pedalAssistMode: BikePedalAssistMode.PAS_MODE_LEVEL_3,
     assistSupportLevel: BikeAssistSupportLevel.LEVEL_1,
@@ -72,6 +68,5 @@ export const getDefaultSettings = (): SettingsFrame => {
     isVibrationMotorLeftEnabled: false,
     isVibrationMotorRightEnabled: false,
     magnetsInSpeedSensor: 0,
-    frameHeader: SettingsFrameHeader.SETTINGS_ACK,
   };
 };
