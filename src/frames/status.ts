@@ -1,15 +1,10 @@
-import { FrameHeader } from "./frame";
-
-export enum StatusFrameHeader {
-  STATUS_READ = FrameHeader.STATUS_READ,
-  STATUS_WRITE = FrameHeader.STATUS_WRITE,
-  STATUS_ACK = FrameHeader.STATUS_ACK,
-  STATUS_NAK = FrameHeader.STATUS_NAK,
-}
+import { FrameHeader, FrameType } from "./baseFrame";
 
 export type StatusFrame = {
   id: number;
   createdAt: number;
+  frameType: FrameType;
+  frameHeader: FrameHeader.STATUS;
   isHeadlightOn: boolean;
   isTurnIndicatorLeftOn: boolean;
   isTurnIndicatorRightOn: boolean;
@@ -18,13 +13,14 @@ export type StatusFrame = {
   isDRLOn: boolean;
   isHighBeamOn: boolean;
   isOnSecondaryBattery: boolean;
-  frameHeader: StatusFrameHeader;
 };
 
 export const getDefaultStatus = (): StatusFrame => {
   return {
     id: Date.now(),
     createdAt: Date.now(),
+    frameType: FrameType.ACK,
+    frameHeader: FrameHeader.STATUS,
     isHeadlightOn: false,
     isTurnIndicatorLeftOn: false,
     isTurnIndicatorRightOn: false,
@@ -33,6 +29,5 @@ export const getDefaultStatus = (): StatusFrame => {
     isDRLOn: false,
     isHighBeamOn: false,
     isOnSecondaryBattery: false,
-    frameHeader: StatusFrameHeader.STATUS_ACK,
   };
 };
