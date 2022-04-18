@@ -3,7 +3,7 @@ import { StatusFrame } from "./status";
 import { DisplayFrame } from "./display";
 import { DebugFrame1, DebugFrame2, DebugFrame3 } from "./debug";
 
-type Bike = {
+export type Bike = {
   bikeId: string;
   bikePassword: string;
   isOnline: boolean;
@@ -15,5 +15,3 @@ type Bike = {
   display: DisplayFrame;
   debug: DebugFrame1 | DebugFrame2 | DebugFrame3;
 };
-
-export default Bike;
