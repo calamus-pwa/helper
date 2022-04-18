@@ -1,17 +1,8 @@
 import { randomEnum } from "../utils/math";
-import { FrameHeader } from "./frame";
+import { FrameHeader } from "./baseFrame";
 
 export enum ActionTypes {
-  SETTINGS_READ = "SETTINGS_READ",
-  STATUS_READ = "STATUS_READ",
-  DISPLAY_READ = "DISPLAY_READ",
-  DEBUG_READ = "DEBUG_READ",
   RING_BELL = "RING_BELL",
-  UNLOCK = "UNLOCK",
-  LOCK = "LOCK",
-  MARK_LOST = "MARK_LOST",
-  MARK_FOUND = "MARK_FOUND",
-  REQUEST_LOCATION = "REQUEST_LOCATION",
 }
 
 export const ActionTypesArray = Object.keys(ActionTypes);
