@@ -1,9 +1,10 @@
-import { FrameHeader } from "./frame";
+import { FrameHeader } from "./baseFrame";
 import { randomNumber, randomFloat } from "../utils/math";
 
 export type HeartbeatFrame = {
   id: number;
   createdAt: number; //Date in epoch
+  frameHeader: FrameHeader.HEARTBEAT;
   speed: number; //kmph
   rpm: number; // RPM of motor 0 to 255
   calories: number;
@@ -12,13 +13,13 @@ export type HeartbeatFrame = {
   motorTemprature: number; // its in degree celcius
   remainingCapacity: number; // percentage 0 to 100
   soh: number; // state of health 0 to 100
-  frameHeader: FrameHeader.HEARTBEAT;
 };
 
 export const getRandomHeartbeat = (): HeartbeatFrame => {
   return {
     id: Date.now(),
     createdAt: Date.now(),
+    frameHeader: FrameHeader.HEARTBEAT,
     speed: randomFloat(5, 60, 2),
     rpm: randomNumber(0, 255),
     calories: randomNumber(2, 15),
@@ -27,6 +28,5 @@ export const getRandomHeartbeat = (): HeartbeatFrame => {
     motorTemprature: randomNumber(15, 50),
     remainingCapacity: randomNumber(1, 100),
     soh: randomNumber(1, 100),
-    frameHeader: FrameHeader.HEARTBEAT,
   } as HeartbeatFrame;
 };
