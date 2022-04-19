@@ -1,9 +1,10 @@
 import { FrameHeader, FrameType } from "./baseFrame";
 
 export enum DebugFrameNumber {
-  FRAME_1 = "FRAME_1",
-  FRAME_2 = "FRAME_2",
-  FRAME_3 = "FRAME_3",
+  FRAME_INVALID = 0,
+  FRAME_1 = 1,
+  FRAME_2 = 2,
+  FRAME_3 = 3,
 }
 
 export type DebugFrame1 = {

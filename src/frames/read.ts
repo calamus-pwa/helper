@@ -2,14 +2,15 @@ import { randomEnum } from "../utils/math";
 import { FrameHeader } from "./baseFrame";
 
 export enum ReadType {
-  SETTINGS_READ = "SETTINGS_READ",
-  STATUS_READ = "STATUS_READ",
-  DEBUG_READ = "DEBUG_READ",
-  LOST_READ = "LOST_READ",
-  SAVED_LOCATIONS_READ = "SAVED_LOCATIONS_READ",
-  LOCATION_READ = "LOCATION_READ",
-  LOCK_READ = "LOCK_READ",
-  DISPLAY_READ = "DISPLAY_READ",
+  SETTINGS_READ = 1,
+  STATUS_READ = 2,
+  DEBUG_READ = 3,
+  LOST_READ = -123,
+  SAVED_LOCATIONS_READ = -124,
+  LOCATION_READ = -125,
+  LOCK_READ = -126,
+  POWER_READ = -127,
+  DISPLAY_READ = -128,
 }
 
 export type ReadFrame = {

@@ -1,30 +1,42 @@
 import { FrameHeader, FrameType } from "./baseFrame";
 
-export enum BikePedalAssistMode {
-  PAS_MODE_LEVEL_3 = "PAS_MODE_LEVEL_3",
-  PAS_MODE_LEVEL_5 = "PAS_MODE_LEVEL_5",
-  PAS_MODE_LEVEL_9 = "PAS_MODE_LEVEL_9",
-}
+export enum PasAslMode {
+  PAS_MODE_3_LEVEL_WALK_ASSIST = 774,
+  PAS_MODE_3_LEVEL_0 = 768,
+  PAS_MODE_3_LEVEL_1 = 780,
+  PAS_MODE_3_LEVEL_2 = 770,
+  PAS_MODE_3_LEVEL_3 = 771,
 
-export enum BikeAssistSupportLevel {
-  LEVEL_0 = "LEVEL_0",
-  LEVEL_1 = "LEVEL_1",
-  LEVEL_2 = "LEVEL_2",
-  LEVEL_3 = "LEVEL_3",
-  LEVEL_4 = "LEVEL_4",
-  LEVEL_5 = "LEVEL_5",
-  LEVEL_WALK_ASSIST = "LEVEL_WALK_ASSIST",
+  PAS_MODE_5_LEVEL_WALK_ASSIST = 1286,
+  PAS_MODE_5_LEVEL_0 = 1280,
+  PAS_MODE_5_LEVEL_1 = 1291,
+  PAS_MODE_5_LEVEL_2 = 1293,
+  PAS_MODE_5_LEVEL_3 = 1301,
+  PAS_MODE_5_LEVEL_4 = 1303,
+  PAS_MODE_5_LEVEL_5 = 1283,
+
+  PAS_MODE_9_LEVEL_WALK_ASSIST = 2310,
+  PAS_MODE_9_LEVEL_0 = 2304,
+  PAS_MODE_9_LEVEL_1 = 2305,
+  PAS_MODE_9_LEVEL_2 = 2315,
+  PAS_MODE_9_LEVEL_3 = 2316,
+  PAS_MODE_9_LEVEL_4 = 2317,
+  PAS_MODE_9_LEVEL_5 = 2306,
+  PAS_MODE_9_LEVEL_6 = 2325,
+  PAS_MODE_9_LEVEL_7 = 2326,
+  PAS_MODE_9_LEVEL_8 = 2327,
+  PAS_MODE_9_LEVEL_9 = 2307,
 }
 
 export enum BikeWheelDiameter {
-  DIA_16_INCH = "DIA_16_INCH",
-  DIA_18_INCH = "DIA_18_INCH",
-  DIA_20_INCH = "DIA_20_INCH",
-  DIA_22_INCH = "DIA_22_INCH",
-  DIA_24_INCH = "DIA_24_INCH",
-  DIA_26_INCH = "DIA_26_INCH",
-  DIA_27_5_INCH = "DIA_27_5_INCH",
-  DIA_28_INCH = "DIA_28_INCH",
+  DIA_16_INCH = 0,
+  DIA_18_INCH = 1,
+  DIA_20_INCH = 2,
+  DIA_22_INCH = 3,
+  DIA_24_INCH = 4,
+  DIA_26_INCH = 5,
+  DIA_27_5_INCH = 6,
+  DIA_28_INCH = 7,
 }
 
 export type SettingsFrame = {
@@ -33,8 +45,7 @@ export type SettingsFrame = {
   frameType: FrameType;
   frameHeader: FrameHeader.SETTINGS;
   autoShutdownTimer: number;
-  pedalAssistMode: BikePedalAssistMode;
-  assistSupportLevel: BikeAssistSupportLevel;
+  pasAslMode: PasAslMode;
   speedLimit: number;
   lowVoltageDeviation: number;
   isEco: boolean;
@@ -55,8 +66,7 @@ export const getDefaultSettings = (): SettingsFrame => {
     frameHeader: FrameHeader.SETTINGS,
     frameType: FrameType.ACK,
     autoShutdownTimer: 0,
-    pedalAssistMode: BikePedalAssistMode.PAS_MODE_LEVEL_3,
-    assistSupportLevel: BikeAssistSupportLevel.LEVEL_1,
+    pasAslMode: PasAslMode.PAS_MODE_9_LEVEL_2,
     speedLimit: 30,
     lowVoltageDeviation: 0,
     isEco: true,

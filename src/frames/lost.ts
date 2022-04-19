@@ -2,8 +2,8 @@ import { randomEnum } from "../utils/math";
 import { FrameHeader } from "./baseFrame";
 
 export enum LostState {
-  LOST = "LOST",
-  FOUND = "FOUND",
+  LOST = 0,
+  FOUND = 1,
 }
 
 export type LostFrame = {

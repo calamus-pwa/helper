@@ -2,10 +2,10 @@ import { randomEnum } from "../utils/math";
 import { FrameHeader } from "./baseFrame";
 
 export enum LockState {
-  LOCK = "LOCK",
-  UNLOCK = "UNLOCK",
-  FORCE_LOCK = "FORCE_LOCK",
-  FORCE_UNLOCK = "FORCE_UNLOCK",
+  LOCK = 0,
+  UNLOCK = 1,
+  FORCE_LOCK = 2,
+  FORCE_UNLOCK = 3,
 }
 
 export type LockFrame = {

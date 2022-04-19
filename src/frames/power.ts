@@ -2,8 +2,8 @@ import { randomEnum } from "../utils/math";
 import { FrameHeader } from "./baseFrame";
 
 export enum PowerState {
-  ON = "ON",
-  OFF = "OFF",
+  ON = 0,
+  OFF = 1,
 }
 
 export type PowerFrame = {
