@@ -137,6 +137,9 @@ export function getDebugFrame1(): DebugFrame1 {
   return {
     id: Date.now(),
     createdAt: Date.now(),
+    frameType: FrameType.ACK,
+    frameHeader: FrameHeader.DEBUG,
+    debugFrameNumber: DebugFrameNumber.FRAME_1,
 
     //DebugFrame1
     controllerPulse: 0,
