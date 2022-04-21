@@ -80,3 +80,19 @@ export const getDefaultSettings = (): SettingsFrame => {
     magnetsInSpeedSensor: 0,
   };
 };
+
+const PasAslModeKeys = [];
+for (const key in PasAslMode) {
+  if (isNaN(Number(key))) {
+    PasAslModeKeys.push(key);
+  }
+}
+
+const BikeWdKeys = [];
+for (const key in BikeWheelDiameter) {
+  if (isNaN(Number(key))) {
+    BikeWdKeys.push(key);
+  }
+}
+
+export { PasAslModeKeys, BikeWdKeys };

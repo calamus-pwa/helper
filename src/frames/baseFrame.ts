@@ -1,4 +1,4 @@
-export enum FrameHeader {
+enum FrameHeader {
   HEARTBEAT = 1,
   USER_INPUT = 2,
   ERROR = 3,
@@ -19,8 +19,17 @@ export enum FrameHeader {
   INVALID = -128,
 }
 
-export enum FrameType {
+const FrameHeaderArray = [];
+for (const key in FrameHeader) {
+  if (!isNaN(Number(key))) {
+    FrameHeaderArray.push(Number(key));
+  }
+}
+
+enum FrameType {
   WRITE = 1,
   ACK = 2,
   NAK = 3,
 }
+
+export { FrameHeader, FrameHeaderArray, FrameType };
