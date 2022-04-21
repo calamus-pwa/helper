@@ -4,6 +4,11 @@ import { DisplayFrame } from "./display";
 import { HeartbeatFrame } from "./heartbeat";
 import { ErrorFrame } from "./error";
 import { DebugFrame1, DebugFrame2, DebugFrame3 } from "./debug";
+import { LostFrame } from "./lost";
+import { LockFrame } from "./lock";
+import { SavedLocationsFrame } from "./savedLocations";
+import { PowerFrame } from "./power";
+import { LocationFrame } from "./location";
 
 export type BikeFrames = {
   settings: SettingsFrame[];
@@ -31,6 +36,12 @@ export type Bike = {
   currentHeartbeatFrame?: HeartbeatFrame;
   currentStatusFrame?: StatusFrame;
   currentDisplayFrame?: DisplayFrame;
+  currentLostFrame?: LostFrame;
+  currentLockFrame?: LockFrame;
+  currentLocationFrame?: LocationFrame;
+  currentSavedLocationFrame?: SavedLocationsFrame;
+  currentPowerFrame?: PowerFrame;
+  lastSyncedAt?: number; //epoch time of last frame saved
   unreadErrors?: number[];
 
   frames: BikeFrames;
