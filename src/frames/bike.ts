@@ -17,6 +17,11 @@ export type BikeFrames = {
   heartbeats: HeartbeatFrame[];
   statuses: StatusFrame[];
   errors: ErrorFrame[];
+  locks: LockFrame[];
+  losts: LostFrame[];
+  locations: LocationFrame[];
+  powers: PowerFrame[];
+  savedLocations: SavedLocationsFrame[];
 };
 
 export type Bike = {
@@ -39,8 +44,8 @@ export type Bike = {
   currentLostFrame?: LostFrame;
   currentLockFrame?: LockFrame;
   currentLocationFrame?: LocationFrame;
-  currentSavedLocationFrame?: SavedLocationsFrame;
   currentPowerFrame?: PowerFrame;
+  currentSavedLocationFrame?: SavedLocationsFrame;
   lastSyncedAt?: number; //epoch time of last frame saved
   unreadErrors?: number[];
 
