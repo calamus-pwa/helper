@@ -1,5 +1,5 @@
 import { randomEnum } from "../utils/math";
-import { FrameHeader } from "./baseFrame";
+import { FrameHeader, FrameType } from "./baseFrame";
 
 export enum PowerState {
   ON = 0,
@@ -9,6 +9,7 @@ export enum PowerState {
 export type PowerFrame = {
   id: number;
   createdAt: number;
+  frameType: FrameType;
   frameHeader: FrameHeader.POWER;
   powerState: PowerState;
 };
@@ -17,6 +18,7 @@ export const getDefaultPower = (): PowerFrame => {
   return {
     id: Date.now(),
     createdAt: Date.now(),
+    frameType: FrameType.ACK,
     frameHeader: FrameHeader.POWER,
     powerState: randomEnum(PowerState),
   };

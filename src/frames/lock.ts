@@ -1,5 +1,5 @@
 import { randomEnum } from "../utils/math";
-import { FrameHeader } from "./baseFrame";
+import { FrameHeader, FrameType } from "./baseFrame";
 
 export enum LockState {
   LOCK = 0,
@@ -11,6 +11,7 @@ export enum LockState {
 export type LockFrame = {
   id: number;
   createdAt: number;
+  frameType: FrameType;
   frameHeader: FrameHeader.LOCK;
   lockState: LockState;
 };
@@ -19,6 +20,7 @@ export const getDefaultLock = (): LockFrame => {
   return {
     id: Date.now(),
     createdAt: Date.now(),
+    frameType: FrameType.ACK,
     frameHeader: FrameHeader.LOCK,
     lockState: randomEnum(LockState),
   };

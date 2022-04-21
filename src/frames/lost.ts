@@ -1,5 +1,5 @@
 import { randomEnum } from "../utils/math";
-import { FrameHeader } from "./baseFrame";
+import { FrameHeader, FrameType } from "./baseFrame";
 
 export enum LostState {
   LOST = 0,
@@ -9,6 +9,7 @@ export enum LostState {
 export type LostFrame = {
   id: number;
   createdAt: number;
+  frameType: FrameType;
   frameHeader: FrameHeader.LOST;
   lostState: LostState;
 };
@@ -17,6 +18,7 @@ export const getDefaultLost = (): LostFrame => {
   return {
     id: Date.now(),
     createdAt: Date.now(),
+    frameType: FrameType.ACK,
     frameHeader: FrameHeader.LOST,
     lostState: randomEnum(LostState),
   };

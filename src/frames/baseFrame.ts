@@ -30,6 +30,7 @@ enum FrameType {
   WRITE = 1,
   ACK = 2,
   NAK = 3,
+  NA = 4,
 }
 
 export { FrameHeader, FrameHeaderArray, FrameType };
