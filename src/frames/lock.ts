@@ -22,6 +22,6 @@ export const getDefaultLock = (): LockFrame => {
     createdAt: Date.now(),
     frameType: FrameType.ACK,
     frameHeader: FrameHeader.LOCK,
-    lockState: randomEnum(LockState),
+    lockState: LockState.LOCK,
   };
 };

@@ -20,6 +20,6 @@ export const getDefaultPower = (): PowerFrame => {
     createdAt: Date.now(),
     frameType: FrameType.ACK,
     frameHeader: FrameHeader.POWER,
-    powerState: randomEnum(PowerState),
+    powerState: PowerState.OFF,
   };
 };
