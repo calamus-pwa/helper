@@ -7,6 +7,7 @@ export * from "./display";
 export * from "./error";
 export * from "./heartbeat";
 export * from "./location";
+export * from "./linked";
 export * from "./lock";
 export * from "./lost";
 export * from "./power";
