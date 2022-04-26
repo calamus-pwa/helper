@@ -8,6 +8,7 @@ export enum ReadType {
   LOST_READ = -123,
   SAVED_LOCATIONS_READ = -124,
   LOCATION_READ = -125,
+  LINKED_READ = -122,
   LOCK_READ = -126,
   POWER_READ = -127,
   DISPLAY_READ = -128,

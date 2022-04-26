@@ -9,6 +9,7 @@ enum FrameHeader {
   READ = 7,
   ENCRYPTED = 8,
   // Server Stuff
+  LINKED = -120,
   LOST = -121,
   SAVED_LOCATIONS = -122,
   LOCATION = -123,
