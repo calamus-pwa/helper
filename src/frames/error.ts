@@ -2,7 +2,7 @@ import { randomEnum } from "../utils/math";
 import { FrameHeader } from "./baseFrame";
 import ErrorMessageEn from "./errorMessage.json";
 
-enum ErrorCodes {
+export enum ErrorCodes {
   CURRENT_ERROR_250 = 33,
   THROTTLE_ERROR_250 = 34,
   PHASE_FAULT_250 = 35,
@@ -31,7 +31,7 @@ enum ErrorCodes {
   HEADLIGHT_ERROR_750 = 56,
 }
 
-enum DeviceID {
+export enum DeviceID {
   CONTROLLER_250 = "CONTROLLER_250",
   CONTROLLER_750 = "CONTROLLER_750",
   SENSOR = "SENSOR",
