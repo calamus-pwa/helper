@@ -67,7 +67,7 @@ interface ErrorMessageMap {
   [key: string]: string;
 }
 
-export const getErrorMessage = (errorCode: string, language = "en"): string => {
+export const getErrorMessage = (errorCode: number, language = "en"): string => {
   const errorMessage = ErrorMessageEn as ErrorMessageMap;
   return errorMessage[errorCode];
 };
