@@ -7,4 +7,5 @@ export enum EnumPwaReceiveEvent {
   PR_BIKE_DEBUG_UPDATE = "prBikeDebugUpdate",
   PR_BIKE_ERROR_UPDATE = "prBikeErrorUpdate",
   PR_BIKE_LOCK_UPDATE = "prBikeLockUpdate",
+  PR_BIKE_LOCATION_UPDATE = "prBikeLocationUpdate",
 }
