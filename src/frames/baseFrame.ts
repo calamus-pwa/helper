@@ -9,10 +9,11 @@ enum FrameHeader {
   READ = 7,
   ENCRYPTED = 8,
   // Server Stuff
+  TO_LOCATION = -119,
   LINKED = -120,
   LOST = -121,
   SAVED_LOCATIONS = -122,
-  LOCATION = -123,
+  BIKE_LOCATION = -123,
   LOCK = -124,
   POWER = -125,
   DISPLAY = -126,
