@@ -15,3 +15,4 @@ export * from "./read";
 export * from "./savedLocations";
 export * from "./settings";
 export * from "./status";
+export * from "./toLocation";

@@ -10,7 +10,7 @@ export type ToLocationFrame = {
   location: Location;
 };
 
-export const getDefaultLocation = (): ToLocationFrame => {
+export const getDefaultToLocation = (): ToLocationFrame => {
   return {
     id: Date.now(),
     createdAt: Date.now(),
