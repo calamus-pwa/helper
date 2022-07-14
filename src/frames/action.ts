@@ -2,7 +2,7 @@ import { randomEnum } from "../utils/math";
 import { FrameHeader } from "./baseFrame";
 
 export enum ActionTypes {
-  RING_BELL = "37",
+  RING_BELL = 37,
 }
 
 export const ActionTypesArray = Object.keys(ActionTypes);
