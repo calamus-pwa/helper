@@ -6,4 +6,5 @@ export enum EnumPwaSendEvent {
   PS_BIKE_LOCK_UPDATE = "psBikeLockUpdate",
   PS_BIKE_TO_LOCATION_UPDATE = "psBikeToLocationUpdate",
   PS_BIKE_LOST_UPDATE = "psBikeLostUpdate",
+  PS_BIKE_ERROR_READ = "psBikeErrorRead",
 }
